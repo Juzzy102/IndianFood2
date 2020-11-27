@@ -1,0 +1,42 @@
+---
+title: "Indian Foood"
+author: "Justin"
+date: "27 November 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Importing data into R
+
+Variable_name <- read.csv("location of the file")
+
+### Example
+```{r}
+
+IndianFood<- read.csv("C:/Projects/IndianFood2/indian_food.csv")
+
+
+Indian_Food <- IndianFood %>%
+    group_by(region) %>%
+    summarise(averageCookTime = mean(cook_time),
+             sdCooking = sd(cook_time))
+
+```
+
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
